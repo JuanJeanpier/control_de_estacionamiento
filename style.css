@@ -1,0 +1,351 @@
+
+/* =====================================
+   1. CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================================
+   2. VARIABLES DE COLORES
+===================================== */
+
+:root {
+    --color-principal: #006D75;
+    --color-principal-hover: #00565D;
+    --color-blanco: #FFFFFF;
+    --color-texto: #263238;
+    --color-texto-suave: #64748B;
+    --color-fondo: #F1F7F7;
+    --color-borde: #DCE5E5;
+    --color-sombra: rgba(0, 77, 83, 0.08);
+}
+
+/* =====================================
+   3. CUERPO DE LA PÁGINA
+===================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+}
+
+/* =====================================
+   4. ENCABEZADO
+===================================== */
+
+.encabezado {
+    background-color: var(--color-blanco);
+    padding: 30px 5%;
+    border-bottom: 3px solid var(--color-principal);
+    box-shadow: 0 3px 12px var(--color-sombra);
+}
+
+.encabezado h1 {
+    color: var(--color-principal);
+    font-size: 27px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.encabezado p {
+    color: var(--color-texto-suave);
+    font-size: 14px;
+}
+
+/* =====================================
+   5. CONTENEDOR PRINCIPAL
+===================================== */
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* Primera tarjeta: formulario */
+.tarjeta:first-child {
+    grid-row: span 2;
+}
+
+/* Cuarta tarjeta: historial */
+.tarjeta:last-child {
+    grid-column: 1 / -1;
+}
+
+/* =====================================
+   6. TARJETAS
+===================================== */
+
+.tarjeta {
+    background-color: var(--color-blanco);
+    padding: 28px;
+    border: 1px solid var(--color-borde);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px var(--color-sombra);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px var(--color-sombra);
+}
+
+/* =====================================
+   7. TÍTULOS DE LAS TARJETAS
+===================================== */
+
+.tarjeta h2 {
+    color: var(--color-principal);
+    font-size: 19px;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+/* =====================================
+   8. FORMULARIO
+===================================== */
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.grupo-formulario select,
+.grupo-formulario input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    background-color: #F8FAFA;
+    color: var(--color-texto);
+    font-size: 15px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Efecto al seleccionar un campo */
+
+.grupo-formulario select:focus,
+.grupo-formulario input:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(0, 109, 117, 0.12);
+}
+
+/* =====================================
+   9. BOTÓN DE REGISTRO
+===================================== */
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-principal-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(0, 109, 117, 0.3);
+    outline-offset: 3px;
+}
+
+/* =====================================
+   10. RESULTADOS Y RESUMEN
+===================================== */
+
+#resultado,
+#resumen {
+    background-color: #F1F7F7;
+    border-left: 4px solid var(--color-principal);
+    border-radius: 7px;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   11. HISTORIAL DE VEHÍCULOS
+===================================== */
+
+#lista {
+    background-color: #F8FAFA;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 18px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: var(--color-texto);
+}
+
+/* =====================================
+   12. RESPONSIVE PARA TABLETS
+===================================== */
+
+@media (max-width: 768px) {
+
+    .contenedor {
+        width: 92%;
+        gap: 16px;
+    }
+
+    .tarjeta {
+        padding: 22px;
+    }
+
+    .encabezado h1 {
+        font-size: 23px;
+    }
+}
+
+/* =====================================
+   13. RESPONSIVE PARA CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+
+    .encabezado {
+        padding: 25px 18px;
+        text-align: center;
+    }
+
+    .encabezado h1 {
+        font-size: 20px;
+    }
+
+    .contenedor {
+        width: 92%;
+        margin: 22px auto;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tarjeta:first-child {
+        grid-row: auto;
+    }
+
+    .tarjeta:last-child {
+        grid-column: auto;
+    }
+
+    .tarjeta {
+        padding: 20px;
+        border-radius: 11px;
+    }
+
+    .tarjeta h2 {
+        font-size: 17px;
+    }
+
+    .grupo-formulario select,
+    .grupo-formulario input {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 15px;
+    }
+
+    #resultado,
+    #resumen,
+    #lista {
+        font-size: 13px;
+    }
+}
+
+/* PANEL DE TARIFAS */
+
+.panel-tarifas {
+    grid-column: 1 / -1;
+}
+
+/* Distribución de las tarifas */
+
+.lista-tarifas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* Tarjeta individual de tarifa */
+
+.tarifa {
+    background-color: #F1F7F7;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--color-borde);
+}
+
+.tarifa h3 {
+    color: var(--color-texto);
+    margin-bottom: 12px;
+}
+
+.tarifa p {
+    color: var(--color-principal);
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tarifa span {
+    color: var(--color-texto-suave);
+    font-size: 13px;
+}
+
+/* Aviso del descuento */
+
+.aviso-descuento {
+    margin-top: 18px;
+    padding: 13px;
+    background-color: #E8F4F4;
+    border-radius: 8px;
+    color: var(--color-principal);
+    font-size: 14px;
+}
+
+/* Tarifas en celulares */
+
+@media (max-width: 600px) {
+
+    .lista-tarifas {
+        grid-template-columns: 1fr;
+    }
+
+}

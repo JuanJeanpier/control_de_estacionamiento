@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Control de Estacionamiento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Encabezado principal -->
+    <header class="encabezado">
+        <h1>CONTROL DE ESTACIONAMIENTO</h1>
+        <p>Registro y administración de vehículos</p>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedor">
+
+        <!-- Panel de tarifas -->
+<section class="tarjeta panel-tarifas">
+
+    <h2>Tarifas de estacionamiento</h2>
+
+    <div class="lista-tarifas">
+
+        <div class="tarifa">
+            <h3>Auto</h3>
+            <p>S/ 5.00</p>
+            <span>Por hora</span>
+        </div>
+
+        <div class="tarifa">
+            <h3>Moto</h3>
+            <p>S/ 4.00</p>
+            <span>Por hora</span>
+        </div>
+
+        <div class="tarifa">
+            <h3>Camioneta</h3>
+            <p>S/ 6.00</p>
+            <span>Por hora</span>
+        </div>
+
+    </div>
+
+    <p class="aviso-descuento">
+        <strong>Descuento:</strong>
+        10% para estacionamientos de 5 horas o más.
+    </p>
+
+</section>
+
+        <!-- Formulario de registro -->
+        <section class="tarjeta">
+
+            <h2>Registro de vehículos</h2>
+
+            <form id="formulario">
+
+                <div class="grupo-formulario">
+                    <label for="tipoVehiculo">Tipo de vehículo:</label>
+
+                    <select id="tipoVehiculo">
+                        <option value="auto">Auto</option>
+                        <option value="moto">Moto</option>
+                        <option value="camioneta">Camioneta</option>
+                    </select>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="horas">Horas estacionadas:</label>
+
+                    <input
+                        type="number"
+                        id="horas"
+                        min="1"
+                        step="1"
+                        placeholder="Ingresa las horas"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Registrar vehículo</button>
+
+            </form>
+
+        </section>
+
+        <!-- Resultado del último registro -->
+        <section class="tarjeta">
+
+            <h2>Resultado del registro</h2>
+
+            <p id="resultado">
+                Aquí aparecerá el resultado del vehículo registrado.
+            </p>
+
+        </section>
+
+        <!-- Resumen general -->
+        <section class="tarjeta">
+
+            <h2>Resumen del estacionamiento</h2>
+
+            <p id="resumen">
+                Total de vehículos: 0 | Dinero recaudado: S/ 0.00
+            </p>
+
+        </section>
+
+        <!-- Historial de vehículos -->
+        <section class="tarjeta">
+
+            <h2>Historial de vehículos</h2>
+
+            <pre id="lista">Todavía no hay vehículos registrados.</pre>
+
+        </section>
+
+    </main>
+
+    <!-- Archivo JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
